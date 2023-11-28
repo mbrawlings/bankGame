@@ -2,7 +2,9 @@ import { StyleSheet, Text, View } from "react-native";
 import { TextInput, IconButton, Button } from "react-native-paper";
 import { useState } from "react";
 
-export default function AddPlayers({ navigation }) {
+export default function AddPlayers({ navigation, route }) {
+  const { rounds } = route.params
+  console.log(rounds)
   const [newPlayer, setNewPlayer] = useState("");
   const [players, setPlayers] = useState([]);
 
@@ -54,7 +56,7 @@ export default function AddPlayers({ navigation }) {
       <Button
         style={{ display: players.length > 1 ? "flex" : "none" }}
         mode="contained"
-        onPress={() => navigation.navigate("Rounds")}
+        onPress={() => navigation.navigate("Rounds", { rounds: rounds, players: players })}
       >
         PLAY
       </Button>

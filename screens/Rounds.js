@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { TextInput, IconButton, Button } from "react-native-paper";
 import { useState } from "react";
 
-export default function Rounds() {
+export default function Rounds({ navigation, route }) {
   return (
     <View style={styles.container}>
       <View

@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { Button, RadioButton } from "react-native-paper";
 
 export default function StartScreen({ navigation }) {
-  const [checked, setChecked] = useState("10");
+  const [checkedRounds, setCheckedRounds] = useState("10");
 
   return (
     <View style={styles.container}>
@@ -40,7 +40,7 @@ export default function StartScreen({ navigation }) {
           }}
         >
           <div>
-            <Button mode="contained" onPress={() => navigation.navigate('Add Players')}>
+            <Button mode="contained" onPress={() => navigation.navigate('Add Players', { rounds: checkedRounds })}>
               PLAY
             </Button>
           </div>
@@ -63,8 +63,8 @@ export default function StartScreen({ navigation }) {
               >
                 <RadioButton
                   value="10"
-                  status={checked === "10" ? "checked" : "unchecked"}
-                  onPress={() => setChecked("10")}
+                  status={checkedRounds === "10" ? "checked" : "unchecked"}
+                  onPress={() => setCheckedRounds("10")}
                 />
                 <Text>10</Text>
               </div>
@@ -77,8 +77,8 @@ export default function StartScreen({ navigation }) {
               >
                 <RadioButton
                   value="15"
-                  status={checked === "15" ? "checked" : "unchecked"}
-                  onPress={() => setChecked("15")}
+                  status={checkedRounds === "15" ? "checked" : "unchecked"}
+                  onPress={() => setCheckedRounds("15")}
                 />
                 <Text>15</Text>
               </div>
@@ -91,8 +91,8 @@ export default function StartScreen({ navigation }) {
               >
                 <RadioButton
                   value="20"
-                  status={checked === "20" ? "checked" : "unchecked"}
-                  onPress={() => setChecked("20")}
+                  status={checkedRounds === "20" ? "checked" : "unchecked"}
+                  onPress={() => setCheckedRounds("20")}
                 />
                 <Text>20</Text>
               </div>
