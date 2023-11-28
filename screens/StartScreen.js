@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState } from "react";
-import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { Button, RadioButton } from "react-native-paper";
 
@@ -14,10 +13,12 @@ export default function StartScreen({ navigation }) {
           height: "70%",
           width: "100%",
           padding: "32px",
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
         }}
       >
-        <Text>Open up App.js to start working on your app!</Text>
-        <StatusBar style="auto" />
+        <Text style={{ fontSize: '48px'}}>BANK</Text>
       </View>
       <View
         style={{
@@ -105,7 +106,6 @@ export default function StartScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "blue",
     flex: 1,
     alignItems: "center",
     justifyContent: "center",

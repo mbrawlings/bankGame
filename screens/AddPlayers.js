@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
-import { TextInput, IconButton } from "react-native-paper";
+import { TextInput, IconButton, Button } from "react-native-paper";
 import { useState } from "react";
 
 export default function AddPlayers({ navigation }) {
@@ -44,9 +44,20 @@ export default function AddPlayers({ navigation }) {
           }}
         >
           <Text style={{ padding: "8px" }}>{player}</Text>
-          <IconButton icon="delete" size={20} onPress={() => deletePlayerHandler(index)} />
+          <IconButton
+            icon="delete"
+            size={20}
+            onPress={() => deletePlayerHandler(index)}
+          />
         </div>
       ))}
+      <Button
+        style={{ display: players.length > 1 ? "flex" : "none" }}
+        mode="contained"
+        onPress={() => navigation.navigate("Rounds")}
+      >
+        PLAY
+      </Button>
     </View>
   );
 }
