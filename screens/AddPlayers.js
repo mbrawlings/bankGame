@@ -23,38 +23,39 @@ export default function AddPlayers({ navigation, route }) {
 
   return (
     <View style={styles.container}>
-      <div style={{ display: "flex", width: "100%", marginBottom: "8px" }}>
-        <div style={{ width: "90%" }}>
+      <View style={{ display: "flex", flexDirection: 'row', width: "100%", marginBottom: 8 }}>
+        <View style={{ flex: 1 }}>
           <TextInput
             label="Player Name"
             value={newPlayer}
             onChangeText={(text) => setNewPlayer(text)}
           />
-        </div>
+        </View>
         <IconButton icon="plus" size={30} onPress={addPlayerHandler} />
-      </div>
+      </View>
       {players.map((player, index) => (
-        <div
+        <View
           style={{
             display: "flex",
+            flexDirection: 'row',
             justifyContent: "space-between",
             alignItems: "center",
             width: "100%",
             backgroundColor: "grey",
-            marginTop: "4px",
-            marginBottom: "4px",
+            marginTop: 4,
+            marginBottom: 4,
           }}
         >
-          <Text style={{ padding: "8px" }}>{player}</Text>
+          <Text style={{ padding: 8 }}>{player}</Text>
           <IconButton
             icon="delete"
             size={20}
             onPress={() => deletePlayerHandler(index)}
           />
-        </div>
+        </View>
       ))}
       <Button
-        style={{ display: players.length > 1 ? "flex" : "none" }}
+        style={{ display: players.length > 1 ? "flex" : "none", marginTop: 4 }}
         mode="contained"
         onPress={() => navigation.navigate("Rounds", { rounds: rounds, players: players })}
       >
@@ -67,7 +68,7 @@ export default function AddPlayers({ navigation, route }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: "16px",
+    padding: "6%",
     alignItems: "center",
     justifyContent: "start",
   },

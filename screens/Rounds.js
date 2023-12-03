@@ -10,13 +10,13 @@ export default function Rounds({ navigation, route }) {
           height: "30%",
           width: "100%",
           display: "flex",
-          padding: "16px",
+          padding: "10%",
           flexDirection: "column",
           justifyContent: "space-between",
         }}
       >
-        <div style={{ display: "flex" }}>
-          <div
+        <View style={{ display: "flex", flexDirection: 'row' }}>
+          <View
             style={{
               display: "flex",
               flexDirection: "column",
@@ -25,20 +25,20 @@ export default function Rounds({ navigation, route }) {
           >
             <Text>Round</Text>
             <Text>1/10</Text>
-          </div>
-        </div>
-        <div
+          </View>
+        </View>
+        <View
           style={{
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
           }}
         >
-          <Text style={{ fontSize: "48px" }}>0</Text>
+          <Text style={{ fontSize: 48 }}>0</Text>
           <Text>Round Total</Text>
-        </div>
-        <div style={{ display: "flex" }}>
-          <div
+        </View>
+        <View style={{ display: "flex", flexDirection: 'row' }}>
+          <View
             style={{
               display: "flex",
               flexDirection: "column",
@@ -47,14 +47,14 @@ export default function Rounds({ navigation, route }) {
           >
             <Text>Roll</Text>
             <Text>0</Text>
-          </div>
-        </div>
+          </View>
+        </View>
       </View>
       <View
         style={{
           height: "70%",
           width: "100%",
-          padding: "16px",
+          padding: "6%",
           borderTopLeftRadius: 40,
           borderTopRightRadius: 40,
           overflow: "hidden",
@@ -68,7 +68,6 @@ export default function Rounds({ navigation, route }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-
     alignItems: "center",
     justifyContent: "start",
   },

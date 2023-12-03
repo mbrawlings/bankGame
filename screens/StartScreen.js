@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Button, RadioButton } from "react-native-paper";
@@ -12,26 +12,26 @@ export default function StartScreen({ navigation }) {
         style={{
           height: "70%",
           width: "100%",
-          padding: "32px",
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center'
+          padding: "10%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
-        <Text style={{ fontSize: '48px'}}>BANK</Text>
+        <Text style={{ fontSize: 48 }}>BANK</Text>
       </View>
       <View
         style={{
           height: "30%",
           width: "100%",
-          padding: "32px",
+          padding: "6%",
           borderTopLeftRadius: 40,
           borderTopRightRadius: 40,
           overflow: "hidden",
           backgroundColor: "white",
         }}
       >
-        <div
+        <View
           style={{
             display: "flex",
             flexDirection: "column",
@@ -39,22 +39,29 @@ export default function StartScreen({ navigation }) {
             height: "100%",
           }}
         >
-          <div>
-            <Button mode="contained" onPress={() => navigation.navigate('Add Players', { rounds: checkedRounds })}>
+          <View>
+            <Button
+              mode="contained"
+              onPress={() =>
+                navigation.navigate("Add Players", { rounds: checkedRounds })
+              }
+            >
               PLAY
             </Button>
-          </div>
-          <div>
-            <div
+          </View>
+          <View>
+            <View
               style={{
-                textAlign: "center",
+                display: 'flex',
+                justifyContent: 'center',
+                flexDirection: 'row',
                 width: "100%",
               }}
             >
               <Text style={{ fontWeight: "bold" }}>NUMBER OF ROUNDS</Text>
-            </div>
-            <div style={{ display: "flex", justifyContent: "space-around" }}>
-              <div
+            </View>
+            <View style={{ display: "flex", justifyContent: "space-around", flexDirection: 'row' }}>
+              <View
                 style={{
                   display: "flex",
                   flexDirection: "column",
@@ -67,8 +74,8 @@ export default function StartScreen({ navigation }) {
                   onPress={() => setCheckedRounds("10")}
                 />
                 <Text>10</Text>
-              </div>
-              <div
+              </View>
+              <View
                 style={{
                   display: "flex",
                   flexDirection: "column",
@@ -81,8 +88,8 @@ export default function StartScreen({ navigation }) {
                   onPress={() => setCheckedRounds("15")}
                 />
                 <Text>15</Text>
-              </div>
-              <div
+              </View>
+              <View
                 style={{
                   display: "flex",
                   flexDirection: "column",
@@ -95,10 +102,10 @@ export default function StartScreen({ navigation }) {
                   onPress={() => setCheckedRounds("20")}
                 />
                 <Text>20</Text>
-              </div>
-            </div>
-          </div>
-        </div>
+              </View>
+            </View>
+          </View>
+        </View>
       </View>
     </View>
   );
