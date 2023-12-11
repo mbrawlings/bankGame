@@ -12,7 +12,7 @@ export default function App() {
   return (
     <PaperProvider>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Start">
+        <Stack.Navigator initialRouteName="Rounds">
           <Stack.Screen name="Start" options={{ headerShown: false }} component={StartScreen} />
           <Stack.Screen name="Add Players" component={AddPlayers} />
           <Stack.Screen name="Rounds" options={{ headerShown: false }} component={Rounds} />
